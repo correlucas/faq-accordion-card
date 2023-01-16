@@ -1,0 +1,27 @@
+@import url("https://fonts.googleapis.com/css2?family=Kumbh+Sans:wght@100;300;400;700&display=swap");
+
+@import "reset";
+@import "mediaQueries";
+@import "mixins";
+
+// colors
+$gradient: linear-gradient(180deg, #af68e9 0%, #6663e7 100%);
+$black: hsla(238, 29%, 17%, 1);
+$light-gray: hsla(240, 6%, 50%, 1);
+$dark-gray: hsla(237, 12%, 33%, 1);
+$white: hsl(0, 0%, 100%);
+$hover: hsla(14, 88%, 65%, 1);
+
+body {
+  @include flex(center, center);
+  font-family: "Kumbh Sans", sans-serif;
+  background: $gradient;
+}
+
+main {
+  @include flex();
+  background-color: $white;
+  box-shadow: 0px 50px 50px -20px rgba(53, 18, 122, 0.497159);
+  max-width: 920px;
+  border-radius: 23px;
+}
