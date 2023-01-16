@@ -19,9 +19,93 @@ body {
 }
 
 main {
-  @include flex();
-  background-color: $white;
-  box-shadow: 0px 50px 50px -20px rgba(53, 18, 122, 0.497159);
+  @include flex(center, center);
+  gap: 30px;
   max-width: 920px;
   border-radius: 23px;
+  margin: 20px;
+  background-color: $white;
+  background-image: url(/images/bg-pattern-desktop.svg);
+  background-position: left -600px top -330px;
+  background-repeat: no-repeat;
+  box-shadow: 0px 50px 50px -20px rgba(53, 18, 122, 0.497159);
+  position: relative;
+  &::after {
+    content: url(/images/illustration-box-desktop.svg);
+    position: absolute;
+    left: -43px;
+    top: 225px;
+    animation: cube 5s infinite;
+  }
+}
+
+picture {
+  overflow: hidden;
+}
+
+img {
+  @include flex(center, center);
+  max-width: 100%;
+  object-fit: cover;
+  transform: translateX(-80px);
+}
+
+@keyframes cube {
+  0% {
+    transform: scaleY(1) translateY(-26px);
+    filter: drop-shadow(0 15px 15px rgba(0, 0, 0, 0.3));
+  }
+  50% {
+    transform: scaleY(0.6) translateY(0px);
+    filter: drop-shadow(0 15px 15px rgba(0, 0, 0, 0.3));
+  }
+  100% {
+    transform: scaleY(1) translateY(-26px);
+    filter: drop-shadow(0 15px 15px rgba(0, 0, 0, 0.3));
+  }
+}
+
+@keyframes bob {
+  0% {
+    filter: drop-shadow(0 15px 15px rgba(0, 0, 0, 0.3));
+    transform: translate(0);
+  }
+
+  50% {
+    filter: drop-shadow(0 10px 20px rgba(0, 0, 0, 0.1));
+    transform: translateY(-1rem);
+  }
+
+  100% {
+    filter: drop-shadow(0 15px 15px rgba(0, 0, 0, 0.3));
+    transform: translate(0);
+  }
+}
+
+article {
+  max-width: 350px;
+  padding-block: 65px;
+  padding-inline: 0 75px;
+}
+
+dt {
+  font-style: normal;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 1.2;
+  color: $dark-gray;
+}
+
+dd {
+  font-style: normal;
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 1.5;
+  color: $light-gray;
+}
+
+span {
+  display: block;
+  height: 1px;
+  background-color: #d9d9db;
 }
