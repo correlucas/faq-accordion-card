@@ -178,6 +178,7 @@ img {
   img {
     transform: translateX(0px);
     max-width: 250px;
+    object-fit: cover;
   }
 }
 
@@ -224,6 +225,20 @@ dt::after {
   position: absolute;
 }
 
+dt::after:hover {
+  transform: rotate(180deg);
+  transition: ease 0.3s;
+}
+
+dt:hover {
+  color: #f47c57;
+}
+
+dt.active {
+  font-weight: 700;
+  color: #f47c57;
+}
+
 dd {
   display: none;
   max-width: 300px;
@@ -234,12 +249,34 @@ dd {
   padding-bottom: 16px;
 }
 
-.will-smith {
-  cursor: url("/images/custom-cursor.svg"), auto;
-}
-
 span {
   display: block;
   height: 1px;
   background-color: #d9d9db;
+}
+
+dd.active {
+  display: flex;
+  animation: slideDown 0.5s ease;
+}
+
+dd.active::after {
+  transform: rotate(180deg);
+}
+
+@keyframes slideDown {
+  0% {
+    opacity: 0;
+    max-height: 0px;
+    transform: translateY(-20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0px);
+    max-height: 300px;
+  }
+}
+
+.will-smith {
+  cursor: url("/images/custom-cursor.svg"), auto;
 }

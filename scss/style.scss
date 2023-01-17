@@ -67,6 +67,7 @@ img {
   @include display(tablet) {
     transform: translateX(0px);
     max-width: 250px;
+    object-fit: cover;
   }
 }
 
@@ -106,7 +107,19 @@ dt {
     right: 0;
     top: 0;
     position: absolute;
+    &:hover {
+      transform: rotate(180deg);
+      transition: ease 0.3s;
+    }
   }
+  &:hover {
+    color: $hover;
+  }
+}
+
+dt.active {
+  font-weight: 700;
+  color: $hover;
 }
 
 dd {
@@ -119,12 +132,37 @@ dd {
   padding-bottom: 16px;
 }
 
-.will-smith {
-  cursor: url("/images/custom-cursor.svg"), auto;
-}
-
 span {
   display: block;
   height: 1px;
   background-color: #d9d9db;
+}
+
+dd.active {
+  display: flex;
+  animation: slideDown 0.5s ease;
+  &::after {
+    transform: rotate(180deg);
+  }
+}
+
+.active {
+}
+
+@keyframes slideDown {
+  0% {
+    opacity: 0;
+    max-height: 0px;
+    transform: translateY(-20px);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateY(0px);
+    max-height: 300px;
+  }
+}
+
+.will-smith {
+  cursor: url("/images/custom-cursor.svg"), auto;
 }
