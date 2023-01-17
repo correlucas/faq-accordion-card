@@ -31,30 +31,61 @@ main {
   background-repeat: no-repeat;
   box-shadow: 0px 50px 50px -20px rgba(53, 18, 122, 0.497159);
   position: relative;
+
+  @include display(tablet) {
+    flex-direction: column;
+    background-image: none;
+  }
+
   &::after {
     content: url(/images/illustration-box-desktop.svg);
     position: absolute;
     left: -43px;
-    top: 320px;
+    top: 50%;
     animation: cube 5s infinite;
+
+    @include display(tablet) {
+      display: none;
+    }
   }
 }
 
 picture {
   overflow: hidden;
+  @include display(tablet) {
+    overflow: unset;
+  }
 }
 
 img {
   @include flex(center, center);
   max-width: 100%;
-  object-fit: cover;
   transform: translateX(-80px);
+
+  @include display(tablet) {
+    transform: translateX(0px);
+  }
 }
 
 article {
-  max-width: 350px;
-  padding-block: 65px;
-  padding-inline: 0 75px;
+  max-width: 410px;
+  padding-block: 60px;
+  padding-inline: 0 60px;
+  @include display(tablet) {
+    display: flex;
+    padding-block: 24px 36px;
+    padding-inline: 40px;
+    flex-direction: column;
+    align-items: center;
+  }
+}
+
+h1 {
+  font-weight: 700;
+  font-size: 40px;
+  line-height: 1.2;
+  text-transform: uppercase;
+  padding-bottom: 30px;
 }
 
 dt {
@@ -64,10 +95,19 @@ dt {
   line-height: 1.2;
   color: $dark-gray;
   margin-block: 12px;
+  padding-right: 60px;
+  position: relative;
+  justify-content: space-between;
+  &::after {
+    content: url(/images/icon-arrow-down.svg);
+    right: 0;
+    position: absolute;
+  }
 }
 
 dd {
-  font-style: normal;
+  display: none;
+  max-width: 300px;
   font-weight: 400;
   font-size: 12px;
   line-height: 1.5;
