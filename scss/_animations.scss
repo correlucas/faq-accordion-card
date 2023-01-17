@@ -1,0 +1,14 @@
+@keyframes cube {
+  0% {
+    transform: scaleY(1) translateY(-26px);
+    filter: drop-shadow(0 15px 15px rgba(0, 0, 0, 0.3));
+  }
+  50% {
+    transform: scaleY(0.6) translateY(0px);
+    filter: drop-shadow(0 15px 15px rgba(0, 0, 0, 0.3));
+  }
+  100% {
+    transform: scaleY(1) translateY(-26px);
+    filter: drop-shadow(0 15px 15px rgba(0, 0, 0, 0.3));
+  }
+}

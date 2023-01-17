@@ -94,6 +94,21 @@ body {
   text-rendering: optimizeSpeed;
 }
 
+@keyframes cube {
+  0% {
+    transform: scaleY(1) translateY(-26px);
+    filter: drop-shadow(0 15px 15px rgba(0, 0, 0, 0.3));
+  }
+  50% {
+    transform: scaleY(0.6) translateY(0px);
+    filter: drop-shadow(0 15px 15px rgba(0, 0, 0, 0.3));
+  }
+  100% {
+    transform: scaleY(1) translateY(-26px);
+    filter: drop-shadow(0 15px 15px rgba(0, 0, 0, 0.3));
+  }
+}
+
 body {
   display: flex;
   align-items: center;
@@ -112,7 +127,7 @@ main {
   margin: 20px;
   background-color: white;
   background-image: url(/images/bg-pattern-desktop.svg);
-  background-position: left -600px top -330px;
+  background-position: left -600px top -230px;
   background-repeat: no-repeat;
   box-shadow: 0px 50px 50px -20px rgba(53, 18, 122, 0.497159);
   position: relative;
@@ -122,7 +137,7 @@ main::after {
   content: url(/images/illustration-box-desktop.svg);
   position: absolute;
   left: -43px;
-  top: 225px;
+  top: 320px;
   animation: cube 5s infinite;
 }
 
@@ -139,36 +154,6 @@ img {
   transform: translateX(-80px);
 }
 
-@keyframes cube {
-  0% {
-    transform: scaleY(1) translateY(-26px);
-    filter: drop-shadow(0 15px 15px rgba(0, 0, 0, 0.3));
-  }
-  50% {
-    transform: scaleY(0.6) translateY(0px);
-    filter: drop-shadow(0 15px 15px rgba(0, 0, 0, 0.3));
-  }
-  100% {
-    transform: scaleY(1) translateY(-26px);
-    filter: drop-shadow(0 15px 15px rgba(0, 0, 0, 0.3));
-  }
-}
-
-@keyframes bob {
-  0% {
-    filter: drop-shadow(0 15px 15px rgba(0, 0, 0, 0.3));
-    transform: translate(0);
-  }
-  50% {
-    filter: drop-shadow(0 10px 20px rgba(0, 0, 0, 0.1));
-    transform: translateY(-1rem);
-  }
-  100% {
-    filter: drop-shadow(0 15px 15px rgba(0, 0, 0, 0.3));
-    transform: translate(0);
-  }
-}
-
 article {
   max-width: 350px;
   padding-block: 65px;
@@ -181,6 +166,7 @@ dt {
   font-size: 14px;
   line-height: 1.2;
   color: #4a4b5e;
+  margin-block: 12px;
 }
 
 dd {
@@ -189,6 +175,7 @@ dd {
   font-size: 12px;
   line-height: 1.5;
   color: #787887;
+  padding-bottom: 16px;
 }
 
 span {
