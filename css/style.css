@@ -137,6 +137,7 @@ main {
   main {
     flex-direction: column;
     background-image: none;
+    gap: 0;
   }
 }
 
@@ -145,6 +146,7 @@ main::after {
   position: absolute;
   left: -43px;
   top: 50%;
+  cursor: url("/images/custom-cursor.svg"), auto;
   animation: cube 5s infinite;
 }
 
@@ -175,6 +177,7 @@ img {
 @media (max-width: 840px) {
   img {
     transform: translateX(0px);
+    max-width: 250px;
   }
 }
 
@@ -217,6 +220,7 @@ dt {
 dt::after {
   content: url(/images/icon-arrow-down.svg);
   right: 0;
+  top: 0;
   position: absolute;
 }
 
@@ -228,6 +232,10 @@ dd {
   line-height: 1.5;
   color: #787887;
   padding-bottom: 16px;
+}
+
+.will-smith {
+  cursor: url("/images/custom-cursor.svg"), auto;
 }
 
 span {

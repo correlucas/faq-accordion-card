@@ -35,6 +35,7 @@ main {
   @include display(tablet) {
     flex-direction: column;
     background-image: none;
+    gap: 0;
   }
 
   &::after {
@@ -42,6 +43,7 @@ main {
     position: absolute;
     left: -43px;
     top: 50%;
+    cursor: url("/images/custom-cursor.svg"), auto;
     animation: cube 5s infinite;
 
     @include display(tablet) {
@@ -64,6 +66,7 @@ img {
 
   @include display(tablet) {
     transform: translateX(0px);
+    max-width: 250px;
   }
 }
 
@@ -101,6 +104,7 @@ dt {
   &::after {
     content: url(/images/icon-arrow-down.svg);
     right: 0;
+    top: 0;
     position: absolute;
   }
 }
@@ -113,6 +117,10 @@ dd {
   line-height: 1.5;
   color: $light-gray;
   padding-bottom: 16px;
+}
+
+.will-smith {
+  cursor: url("/images/custom-cursor.svg"), auto;
 }
 
 span {
