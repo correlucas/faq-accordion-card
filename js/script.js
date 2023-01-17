@@ -6,9 +6,15 @@ const arrow = document.querySelectorAll('dt:after')
 question[0].classList.toggle('active');
 answer[0].classList.toggle('active');
 
+
 function activeAccordion() {
+
   answer.forEach((answers) => {
     answers.classList.remove('active') //remove from all answers the active
+  });
+
+  question.forEach((questions) => {
+    questions.classList.remove('active') //remove from all answers the active
   });
 
   this.classList.toggle('active'); //add active when the selected item is clicked
