@@ -3,12 +3,11 @@ const answer = document.querySelectorAll('dd');
 const arrow = document.querySelectorAll('dt:after')
 
 
-question[0].classList.toggle('active');
-answer[0].classList.toggle('active');
+question[0].classList.add('active');
+answer[0].classList.add('active');
 
 
 function activeAccordion() {
-
   answer.forEach((answers) => {
     answers.classList.remove('active') //remove from all answers the active
   });

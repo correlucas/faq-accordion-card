@@ -225,11 +225,6 @@ dt::after {
   position: absolute;
 }
 
-dt::after:hover {
-  transform: rotate(180deg);
-  transition: ease 0.3s;
-}
-
 dt:hover {
   color: #f47c57;
 }
@@ -237,6 +232,11 @@ dt:hover {
 dt.active {
   font-weight: 700;
   color: #f47c57;
+}
+
+dt.active::after {
+  transform: rotate(180deg);
+  transition: ease 0.5s;
 }
 
 dd {

@@ -107,10 +107,6 @@ dt {
     right: 0;
     top: 0;
     position: absolute;
-    &:hover {
-      transform: rotate(180deg);
-      transition: ease 0.3s;
-    }
   }
   &:hover {
     color: $hover;
@@ -120,6 +116,10 @@ dt {
 dt.active {
   font-weight: 700;
   color: $hover;
+  &::after {
+    transform: rotate(180deg);
+    transition: ease 0.5s;
+  }
 }
 
 dd {
