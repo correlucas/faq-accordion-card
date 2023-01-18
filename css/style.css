@@ -1,4 +1,5 @@
 @import url("https://fonts.googleapis.com/css2?family=Kumbh+Sans:wght@100;300;400;700&display=swap");
+
 * {
   margin: 0;
   padding: 0;
@@ -78,6 +79,7 @@ select {
   html:focus-within {
     scroll-behavior: auto;
   }
+
   *,
   *::before,
   *::after {
@@ -99,13 +101,53 @@ body {
     transform: scaleY(1) translateY(-26px);
     filter: drop-shadow(0 15px 15px rgba(0, 0, 0, 0.3));
   }
+
   50% {
     transform: scaleY(0.6) translateY(0px);
     filter: drop-shadow(0 15px 15px rgba(0, 0, 0, 0.3));
   }
+
   100% {
     transform: scaleY(1) translateY(-26px);
     filter: drop-shadow(0 15px 15px rgba(0, 0, 0, 0.3));
+  }
+}
+
+@keyframes slideDown {
+  from {
+    opacity: 0;
+    transform: translateY(-1000px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0px);
+  }
+}
+
+@keyframes slideRight {
+  from {
+    opacity: 0;
+    transform: translateX(-500px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateX(-80px);
+  }
+}
+
+@keyframes miniSlideDown {
+  0% {
+    opacity: 0;
+    max-height: 0px;
+    transform: translateY(-20px);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateY(0px);
+    max-height: 300px;
   }
 }
 
@@ -121,16 +163,18 @@ main {
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 30px;
-  max-width: 920px;
-  border-radius: 23px;
-  margin: 20px;
+  gap: 1.875rem;
+  max-width: 57.5rem;
+  border-radius: 1.4375rem;
+  margin: 1.25rem;
   background-color: white;
   background-image: url(/images/bg-pattern-desktop.svg);
-  background-position: left -600px top -230px;
+  background-position: left -37.5rem top -14.375rem;
   background-repeat: no-repeat;
-  box-shadow: 0px 50px 50px -20px rgba(53, 18, 122, 0.497159);
+  box-shadow: 0rem 3.125rem 3.125rem -1.25rem rgba(53, 18, 122, 0.497159);
   position: relative;
+  animation: slideDown ease 1s;
+  animation-delay: 0.2s;
 }
 
 @media (max-width: 840px) {
@@ -144,7 +188,7 @@ main {
 main::after {
   content: url(/images/illustration-box-desktop.svg);
   position: absolute;
-  left: -43px;
+  left: -2.6875rem;
   top: 50%;
   cursor: url("/images/custom-cursor.svg"), auto;
   animation: cube 5s infinite;
@@ -171,28 +215,30 @@ img {
   align-items: center;
   justify-content: center;
   max-width: 100%;
-  transform: translateX(-80px);
+  animation: slideRight ease 1.5s;
+  animation-delay: 0.5s;
+  transform: translateX(-5rem);
 }
 
 @media (max-width: 840px) {
   img {
-    transform: translateX(0px);
-    max-width: 250px;
+    transform: translateX(0rem);
+    max-width: 15.625rem;
     object-fit: cover;
   }
 }
 
 article {
-  max-width: 410px;
-  padding-block: 60px;
-  padding-inline: 0 60px;
+  max-width: 25.625rem;
+  padding-block: 3.75rem;
+  padding-inline: 0 3.75rem;
 }
 
 @media (max-width: 840px) {
   article {
     display: flex;
-    padding-block: 24px 36px;
-    padding-inline: 40px;
+    padding-block: 1.5rem 2.25rem;
+    padding-inline: 2.5rem;
     flex-direction: column;
     align-items: center;
   }
@@ -200,20 +246,20 @@ article {
 
 h1 {
   font-weight: 700;
-  font-size: 40px;
+  font-size: 2.5rem;
   line-height: 1.2;
   text-transform: uppercase;
-  padding-bottom: 30px;
+  padding-bottom: 1.875rem;
 }
 
 dt {
   font-style: normal;
   font-weight: 400;
-  font-size: 14px;
+  font-size: 0.875rem;
   line-height: 1.2;
   color: #4a4b5e;
-  margin-block: 12px;
-  padding-right: 60px;
+  margin-block: 0.75rem;
+  padding-right: 3.75rem;
   position: relative;
   justify-content: space-between;
 }
@@ -223,6 +269,7 @@ dt::after {
   right: 0;
   top: 0;
   position: absolute;
+  transition: ease-in 0.5s;
 }
 
 dt:hover {
@@ -236,45 +283,32 @@ dt.active {
 
 dt.active::after {
   transform: rotate(180deg);
-  transition: ease 0.5s;
+  transition: ease-out 0.5s;
 }
 
 dd {
   display: none;
-  max-width: 300px;
+  max-width: 18.75rem;
   font-weight: 400;
-  font-size: 12px;
+  font-size: 0.75rem;
   line-height: 1.5;
   color: #787887;
-  padding-bottom: 16px;
+  padding-bottom: 1rem;
 }
 
 span {
   display: block;
-  height: 1px;
+  height: 0.0625rem;
   background-color: #d9d9db;
 }
 
 dd.active {
   display: flex;
-  animation: slideDown 0.5s ease;
+  animation: miniSlideDown 0.5s ease;
 }
 
 dd.active::after {
   transform: rotate(180deg);
-}
-
-@keyframes slideDown {
-  0% {
-    opacity: 0;
-    max-height: 0px;
-    transform: translateY(-20px);
-  }
-  100% {
-    opacity: 1;
-    transform: translateY(0px);
-    max-height: 300px;
-  }
 }
 
 .will-smith {
