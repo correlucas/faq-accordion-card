@@ -1,5 +1,4 @@
 @import url("https://fonts.googleapis.com/css2?family=Kumbh+Sans:wght@100;300;400;700&display=swap");
-
 * {
   margin: 0;
   padding: 0;
@@ -79,7 +78,6 @@ select {
   html:focus-within {
     scroll-behavior: auto;
   }
-
   *,
   *::before,
   *::after {
@@ -101,12 +99,10 @@ body {
     transform: scaleY(1) translateY(-26px);
     filter: drop-shadow(0 15px 15px rgba(0, 0, 0, 0.3));
   }
-
   50% {
     transform: scaleY(0.6) translateY(0px);
     filter: drop-shadow(0 15px 15px rgba(0, 0, 0, 0.3));
   }
-
   100% {
     transform: scaleY(1) translateY(-26px);
     filter: drop-shadow(0 15px 15px rgba(0, 0, 0, 0.3));
@@ -118,7 +114,6 @@ body {
     opacity: 0;
     transform: translateY(-1000px);
   }
-
   to {
     opacity: 1;
     transform: translateY(0px);
@@ -130,7 +125,6 @@ body {
     opacity: 0;
     transform: translateX(-500px);
   }
-
   to {
     opacity: 1;
     transform: translateX(-80px);
@@ -143,7 +137,6 @@ body {
     max-height: 0px;
     transform: translateY(-20px);
   }
-
   100% {
     opacity: 1;
     transform: translateY(0px);
@@ -296,7 +289,7 @@ dd {
   padding-bottom: 1rem;
 }
 
-span {
+.line {
   display: block;
   height: 0.0625rem;
   background-color: #d9d9db;
