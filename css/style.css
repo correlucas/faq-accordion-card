@@ -254,6 +254,7 @@ dt {
   margin-block: 0.75rem;
   padding-right: 3.75rem;
   position: relative;
+  cursor: pointer;
   justify-content: space-between;
 }
 
